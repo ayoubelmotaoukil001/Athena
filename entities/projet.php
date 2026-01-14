@@ -1,11 +1,11 @@
 <?php
 require_once __DIR__ . '/../config/db.php';
 
-
-class project {
+class project
+{
     private $projet_id;
     private $titre;
-    private $descreption; 
+    private $description;
     private $statut;
     private $chef_proj;
 
@@ -16,50 +16,54 @@ class project {
         $this->connection = db::getInstance()->getConnection();
     }
 
-    
+    public function set_projet_id($projet_id)
+    {
+        $this->projet_id = $projet_id;
+    }
 
-    // setters
-    public function settitle($titre)
+    public function set_titre($titre)
     {
         $this->titre = $titre;
     }
 
-    public function setdescreption($descreption)
+    public function set_description($description)
     {
-        $this->descreption = $descreption;
+        $this->description = $description;
     }
 
-    public function setstaut($statut)
+    public function set_statut($statut)
     {
         $this->statut = $statut;
     }
 
-    public function setchef_id($chef_proj)
+    public function set_chef_id($chef_proj)
     {
         $this->chef_proj = $chef_proj;
     }
 
-    // getters 
-    public function gettitre()
+    public function get_projet_id()
+    {
+        return $this->projet_id;
+    }
+
+    public function get_titre()
     {
         return $this->titre;
     }
 
-    public function getdescreption()
+    public function get_description()
     {
-        return $this->descreption;
+        return $this->description;
     }
 
-    public function getstatut()
+    public function get_statut()
     {
         return $this->statut;
     }
 
-    public function getchef_id()
+    public function get_chef_id()
     {
         return $this->chef_proj;
     }
-
-
 }
 ?>

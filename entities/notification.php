@@ -1,47 +1,57 @@
 <?php
- class notification
- {
-    private $notifid ;
-    private $message;
-    private $userid;
-    private $taskid ;
+require_once __DIR__ . '/../config/db.php';
 
-    private $connection ;
+class notification
+{
+    private $notif_id;
+    private $message;
+    private $user_id;
+    private $task_id;
+    private $connection;
+
     public function __construct()
     {
         $this->connection = db::getInstance()->getConnection();
     }
 
-    public function setmessage($message)
+    public function set_notif_id($notif_id)
     {
-      $this->message=$message;
-    }
-    public function setuserid($userid)
-    {
-      $this->userid = $userid;
-    }
-    public function settaskid($taskid)
-    {
-      $this->taskid =$taskid;
+        $this->notif_id = $notif_id;
     }
 
-
-
-    public function getmessage()
+    public function set_message($message)
     {
-      return $this->message;
+        $this->message = $message;
     }
 
-    public function getuserid()
+    public function set_user_id($user_id)
     {
-      return $this->userid;
-    }
-    public function gettaskid()
-    {
-      return $this->taskid;
+        $this->user_id = $user_id;
     }
 
-    
- }
- ?>
- 
+    public function set_task_id($task_id)
+    {
+        $this->task_id = $task_id;
+    }
+
+    public function get_notif_id()
+    {
+        return $this->notif_id;
+    }
+
+    public function get_message()
+    {
+        return $this->message;
+    }
+
+    public function get_user_id()
+    {
+        return $this->user_id;
+    }
+
+    public function get_task_id()
+    {
+        return $this->task_id;
+    }
+}
+?>
